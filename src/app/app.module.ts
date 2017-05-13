@@ -4,22 +4,40 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { MomentModule } from 'angular2-moment';
 
+import { MyApp } from './app.component';
+import { LandingPage } from '../pages/landing/landing';
+
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyDBVO07qN1fGOgQ6tPt0XG0fnCR6AHQ0mQ",
+    authDomain: "projhire.firebaseapp.com",
+    databaseURL: "https://projhire.firebaseio.com",
+    projectId: "projhire",
+    storageBucket: "projhire.appspot.com",
+    messagingSenderId: "64369705068"
+};
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LandingPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    LandingPage
   ],
   providers: [
     StatusBar,
@@ -28,3 +46,4 @@ import { HomePage } from '../pages/home/home';
   ]
 })
 export class AppModule {}
+
