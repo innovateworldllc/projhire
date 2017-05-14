@@ -11,6 +11,7 @@ import { MomentModule } from 'angular2-moment';
 
 import { MyApp } from './app.component';
 import { LandingPage } from '../pages/landing/landing';
+import { AuthProvider } from '../providers/auth/auth';
 
 
 export const firebaseConfig = {
@@ -42,7 +43,8 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
