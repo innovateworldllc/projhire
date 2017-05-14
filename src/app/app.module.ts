@@ -10,7 +10,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MomentModule } from 'angular2-moment';
 
 import { MyApp } from './app.component';
-import { LandingPage } from '../pages/landing/landing';
 import { AuthProvider } from '../providers/auth/auth';
 
 
@@ -24,8 +23,7 @@ export const firebaseConfig = {
 };
 @NgModule({
   declarations: [
-    MyApp,
-    LandingPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -37,8 +35,7 @@ export const firebaseConfig = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    LandingPage
+    MyApp
   ],
   providers: [
     StatusBar,
