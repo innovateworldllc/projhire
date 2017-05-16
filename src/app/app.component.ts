@@ -47,6 +47,3 @@ export class MyApp {
     });
   }
 }
-
-
-// https://github.com/fechanique/cordova-plugin-fcm/issues/177

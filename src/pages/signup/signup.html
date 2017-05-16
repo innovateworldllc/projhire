@@ -19,7 +19,7 @@
         <ion-radio value="company"></ion-radio>
       </ion-item>
     </ion-list>
-    <ion-item>
+    <ion-item ng-hide="!signupForm.value.accountType == personal">
       <ion-label stacked>Company Name</ion-label>
       <ion-input formControlName="company" type="text" placeholder="Company Name" 
         [class.invalid]="!signupForm.controls.company.valid && signupForm.controls.company.dirty">
